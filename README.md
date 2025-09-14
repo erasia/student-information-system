@@ -11,16 +11,16 @@ This is a simple Student Information System project with a frontend, backend, an
 ## Screenshots
 
 ### Students Page
-![Student Page](screenshots/Students Page.png)
+![Student Page](screenshots/Students_Page.png)
 
 ### Courses Page
-![Courses Page](screenshots/Courses Page.png)
+![Courses Page](screenshots/Courses_Page.png)
 
 ### Grades Page
-![Grades Page](screenshots/Grades Page.png)
+![Grades Page](screenshots/Grades_Page.png)
 
 ### Final Grades Page
-![Final Grades Page](screenshots/Final Grades Page.png)
+![Final Grades Page](screenshots/Final_Grades_Page.png)
 
 ## How to Run
 1. Clone the repository.

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Grades</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"/>
+  <style>
+    body { background: #f5f3fa; }
+    .navbar { background: #000; }
+    .nav-link { color: #fff !important; }
+    .nav-link:hover { color: #c8a2c8 !important; }
+    .nav-link.active { background: #c8a2c8; color: #000 !important; border-radius:6px; }
+    .btn-custom { background:#c8a2c8 !important; color:#000 !important; border:none; }
+    .btn-custom:hover { background:#b0b0b0 !important; color:#000 !important; }
+    table thead { background:#c8a2c8; color:#fff; }
+    tbody tr:nth-child(even){ background:#e0e0e0; }
+    tbody tr:hover{ background:#d8bfd8; }
+  </style>
+</head>
+<body data-page="grades.html">
+
+  <nav class="navbar navbar-expand-lg">
+    <div class="container-fluid">
+      <a class="navbar-brand text-white" href="students.html">SIS</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav3">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-end" id="nav3">
+        <ul class="navbar-nav">
+          <li class="nav-item"><a class="nav-link" href="students.html">Students</a></li>
+          <li class="nav-item"><a class="nav-link" href="courses.html">Courses</a></li>
+          <li class="nav-item"><a class="nav-link active" href="grades.html">Grades</a></li>
+          <li class="nav-item"><a class="nav-link" href="final-grades.html">Final Grades</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container my-4">
+    <h1 class="mb-4 text-center">Grades</h1>
+
+    <!-- First row: Student + Course -->
+    <div class="row g-2 mb-2 align-items-center">
+      <div class="col-md-6">
+        <select id="gradeStudent" class="form-select">
+          <option value="">Select student</option>
+        </select>
+      </div>
+      <div class="col-md-6">
+        <select id="gradeCourse" class="form-select">
+          <option value="">Select course</option>
+        </select>
+      </div>
+    </div>
+
+    <!-- Second row: grade inputs -->
+    <div class="row g-2 mb-3 align-items-center">
+      <div class="col-md-2"><input id="attendance" type="number" class="form-control" placeholder="Att" min="0" max="100"></div>
+      <div class="col-md-2"><input id="seatwork" type="number" class="form-control" placeholder="SW" min="0" max="100"></div>
+      <div class="col-md-2"><input id="assignment" type="number" class="form-control" placeholder="Asg" min="0" max="100"></div>
+      <div class="col-md-2"><input id="project" type="number" class="form-control" placeholder="Proj" min="0" max="100"></div>
+      <div class="col-md-2"><input id="midterm" type="number" class="form-control" placeholder="Mid" min="0" max="100"></div>
+      <div class="col-md-2"><input id="final" type="number" class="form-control" placeholder="Final" min="0" max="100"></div>
+    </div>
+
+    <!-- Third row: term + add button -->
+    <div class="row g-2 mb-3 align-items-center">
+      <div class="col-md-3">
+        <select id="term" class="form-select">
+          <option value="">Term</option>
+          <option value="midterm">Midterm</option>
+          <option value="final">Final</option>
+        </select>
+      </div>
+      <div class="col-md-2 d-grid">
+        <button class="btn btn-custom btn-sm" onclick="addGrade()">Add</button>
+      </div>
+    </div>
+
+    <div class="table-responsive">
+      <table id="gradesTable" class="table table-bordered table-striped">
+        <thead>
+          <tr>
+            <th>ID</th><th>Student</th><th>Course</th>
+            <th>Attendance</th><th>Seatwork</th><th>Assignment</th>
+            <th>Project</th><th>Midterm</th><th>Final</th>
+            <th>Term</th><th>Actions</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+  <script>
+    document.querySelectorAll('.nav-link').forEach(link=>{
+      if(link.getAttribute('href')===document.body.getAttribute('data-page')) link.classList.add('active');
+    });
+  </script>
+</body>
+</html>

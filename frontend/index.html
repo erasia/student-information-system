@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Student Information System</title>
+  <style>
+    table { border-collapse: collapse; width: 100%; margin-bottom: 20px; }
+    th, td { border: 1px solid #ddd; padding: 8px; text-align: left; }
+    th { background-color: #f2f2f2; }
+    input, select, button { margin: 5px; }
+  </style>
+</head>
+<body>
+  <h1>Student Information System</h1>
+
+  <!-- STUDENTS -->
+  <h2>Students</h2>
+  <input type="text" id="studentName" placeholder="Student Name">
+  <input type="email" id="studentEmail" placeholder="Student Email">
+  <button onclick="addStudent()">Add Student</button>
+  <table id="studentsTable">
+    <thead>
+      <tr><th>ID</th><th>Name</th><th>Email</th><th>Action</th></tr>
+    </thead>
+    <tbody></tbody>
+  </table>
+
+  <!-- COURSES -->
+  <h2>Courses</h2>
+  <input type="text" id="courseName" placeholder="Course Name">
+  <input type="text" id="teacherName" placeholder="Teacher Name">
+  <button onclick="addCourse()">Add Course</button>
+  <table id="coursesTable">
+    <thead>
+      <tr><th>ID</th><th>Course</th><th>Teacher</th><th>Action</th></tr>
+    </thead>
+    <tbody></tbody>
+  </table>
+
+  <!-- GRADES -->
+  <h2>Grades</h2>
+  <label>Student:</label>
+  <select id="gradeStudent"></select>
+  <label>Course:</label>
+  <select id="gradeCourse"></select><br>
+  <input type="number" id="attendance" placeholder="Attendance">
+  <input type="number" id="seatwork" placeholder="Seatwork">
+  <input type="number" id="assignment" placeholder="Assignment">
+  <input type="number" id="project" placeholder="Project">
+  <input type="number" id="midterm" placeholder="Midterm Exam">
+  <input type="number" id="final" placeholder="Final Exam">
+  <label>Term:</label>
+  <select id="term">
+    <option value="">Select term</option>
+    <option value="midterm">Midterm</option>
+    <option value="final">Final</option>
+  </select>
+  <button onclick="addGrade()">Add Grade</button>
+
+  <table id="gradesTable">
+    <thead>
+      <tr>
+        <th>ID</th><th>Student</th><th>Course</th>
+        <th>Attendance</th><th>Seatwork</th><th>Assignment</th>
+        <th>Project</th><th>Midterm</th><th>Final</th><th>Term</th><th>Action</th>
+      </tr>
+    </thead>
+    <tbody></tbody>
+  </table>
+
+  <!-- FINAL GRADES -->
+  <h2>Final Grades</h2>
+  <button onclick="calculateFinalGrades()">Calculate Final Grades</button>
+  <table id="finalGradesTable">
+    <thead>
+      <tr><th>Student</th><th>Course</th><th>Final Grade</th></tr>
+    </thead>
+    <tbody></tbody>
+  </table>
+
+  <script src="script.js"></script>
+</body>
+</html>
